@@ -17,14 +17,15 @@ module.exports = {
   fontFamily: {
       mulish: ['Mulish', 'sans-serif'],
       cinzel: ['"Cinzel Decorative"', 'serif'],
-      fraktur: ['UnifrakturCook', 'cursive']
+      fraktur: ['UnifrakturCook', 'cursive'],
+      vixsa: ['Vixsa', 'cursive'],
   },
   colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      white: '#F3F2EE', // Blanc cassé
+      white: '#FFFFFF', // Blanc cassé
       black: '#000000', // Noir profond
-      primary: '#7C1E28', // Rouge bordeaux sombre
+      primary: 'red', // Rouge bordeaux sombre
       secondary: '#C0C0C0', // Argent
       gray: {
           DEFAULT: '#282828',
