@@ -1,13 +1,13 @@
+
+
 <app-header></app-header>
 
-
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur aliquam, sit commodi ad culpa rem dolorem velit placeat excepturi mollitia quam reiciendis alias veritatis autem nemo dolorum ratione laudantium! Repellat.</p>
-
-
 <router-outlet></router-outlet> <!-- pour le scroll vers ancre ou future gestion de section -->
+
+
+<div class="relative">
 <!-- CERCLES EN ARRIÈRE-PLAN -->
-<div class="circleContainer pointer-events-none select-none z-0">
+<div class="circleContainer pointer-events-none select-none z-10">
   <img src="/assets/images/circle.png" id="circle01" class="circle" />
   <img src="/assets/images/circle.png" id="circle02" class="circle" />
   <img src="/assets/images/circle.png" id="circle03" class="circle" />
@@ -20,4 +20,19 @@
   <img src="/assets/images/circle.png" id="circle10" class="circle" />
   <img src="/assets/images/circle.png" id="circle11" class="circle" />
 </div>
+
+<!-- Section A propos de moi -->
+  <section id="portfolio" class="relative z-10 container py-5 px-8">
+
+    <div class=" gap-8">
+      <app-card-title-text-img-button
+        *ngFor="let item of aboutMeList"
+        [title]="item.title"
+        [description]="item.description"
+      ></app-card-title-text-img-button>
+    </div>
+  </section>
+  
+</div>
+
 <app-footer></app-footer>
