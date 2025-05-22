@@ -1,11 +1,7 @@
-
-
 <app-header></app-header>
 
 <router-outlet></router-outlet> <!-- pour le scroll vers ancre ou future gestion de section -->
 
-
-<div class="relative">
 <!-- CERCLES EN ARRIÈRE-PLAN -->
 <div class="circleContainer pointer-events-none select-none z-10">
   <img src="/assets/images/circle.png" id="circle01" class="circle" />
@@ -21,18 +17,64 @@
   <img src="/assets/images/circle.png" id="circle11" class="circle" />
 </div>
 
-<!-- Section A propos de moi -->
-  <section id="portfolio" class="relative z-10 container py-5 px-8">
+<div class="relative">
 
-    <div class=" gap-8">
+  <!-- Section A propos de moi -->
+  <section class="relative z-10 container py-5 px-8">
+    <div class="gap-8">
+      
+      <app-card-title-text-img-button
+        title="About me ..."
+        description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie..."
+        imgPath="/assets/images/logo/logo_nocte_red.png"
+        imgClass="lg:mt-52"
+        imgPosition="right"
+        imgAlt="Skull"
+        [showButton]="false"
+        containerClass="glassmorphism p-6 sm:p-8 w-[65%] ml-[40%] rounded-lg shadow-lg"
+      ></app-card-title-text-img-button>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <div class="bg-gray-900 text-white glassmorphism py-6 px-4">
+    <h2 class="text-3xl sm:text-4xl text-primary font-fraktur mb-4 ">GALERIE</h2>
+  </div>
+
+  <section class="relative z-10 container py-5 px-8">
+    <div class="gap-8">
       <app-card-title-text-img-button
         *ngFor="let item of aboutMeList"
         [title]="item.title"
         [description]="item.description"
+        imgPath="/assets/images/card_logo.avif"
+        imgClass="rounded-lg"
+        imgPosition="left"
+        imgAlt="Logo galerie"
+        buttonText="En savoir +"
+      ></app-card-title-text-img-button>
+    </div>
+  </section>
+
+  <section class="relative z-10 container py-5 px-8">
+    <div class="gap-8">
+      <app-card-title-text-img-button
+        *ngFor="let item of aboutMeList"
+        [title]="item.title"
+        [description]="item.description"
+        imgPath="/assets/images/red_woman.avif"
+        imgClass="rounded-lg"
+        imgPosition="right"
+        imgAlt="Logo galerie"
+        buttonText="En savoir +"
       ></app-card-title-text-img-button>
     </div>
   </section>
   
+
+
+
+
 </div>
 
 <app-footer></app-footer>
