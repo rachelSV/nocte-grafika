@@ -3,7 +3,7 @@
 <router-outlet></router-outlet> <!-- pour le scroll vers ancre ou future gestion de section -->
 
 <!-- CERCLES EN ARRIÈRE-PLAN -->
-<div class="circleContainer pointer-events-none select-none z-10">
+<div class="circleContainer pointer-events-none select-none z-10 w-32">
   <img src="/assets/images/circle.png" id="circle01" class="circle" />
   <img src="/assets/images/circle.png" id="circle02" class="circle" />
   <img src="/assets/images/circle.png" id="circle03" class="circle" />
@@ -27,11 +27,10 @@
         title="About me ..."
         description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie..."
         imgPath="/assets/images/logo/logo_nocte_red.png"
-        imgClass="lg:mt-52"
-        imgPosition="right"
+        imgClass=""
         imgAlt="Skull"
         [showButton]="false"
-        containerClass="glassmorphism p-6 sm:p-8 w-[65%] ml-[40%] rounded-lg shadow-lg"
+        containerClass="glassmorphism p-6 sm:p-8 lg:w-[65%] lg:ml-[40%] rounded-lg shadow-lg"
       ></app-card-title-text-img-button>
     </div>
   </section>
@@ -44,37 +43,34 @@
   <section class="relative z-10 container py-5 px-8">
     <div class="gap-8">
       <app-card-title-text-img-button
-        *ngFor="let item of aboutMeList"
+        *ngFor="let item of aboutMeList; let index = index" 
         [title]="item.title"
         [description]="item.description"
-        imgPath="/assets/images/card_logo.avif"
+        [imgPath]="item.imgPath"
         imgClass="rounded-lg"
-        imgPosition="left"
         imgAlt="Logo galerie"
+        [layoutClass]="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
         buttonText="En savoir +"
       ></app-card-title-text-img-button>
     </div>
   </section>
+</div>
 
+<div class="bg-black ">
   <section class="relative z-10 container py-5 px-8">
     <div class="gap-8">
       <app-card-title-text-img-button
-        *ngFor="let item of aboutMeList"
+        *ngFor="let item of aboutMeList; let index = index" 
         [title]="item.title"
         [description]="item.description"
-        imgPath="/assets/images/red_woman.avif"
+        [imgPath]="item.imgPath"
         imgClass="rounded-lg"
-        imgPosition="right"
         imgAlt="Logo galerie"
+        [imgPosition]="index % 2 === 0 ? 'left' : 'right'"
         buttonText="En savoir +"
       ></app-card-title-text-img-button>
     </div>
   </section>
-  
-
-
-
-
 </div>
 
 <app-footer></app-footer>

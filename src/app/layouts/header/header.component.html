@@ -1,32 +1,50 @@
-<header class="relative w-full h-screen text-white font-fraktur">
-    <!-- Image de fond -->
-    <div class="absolute inset-0 z-0">
-      <img src="/assets/images/header-banner.avif" alt="Banner Nocte Grafika" class="w-full h-full object-cover" />
-    </div>
-  
-    <!-- Bande noire semi-transparente -->
-    <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-  
-    <!-- Contenu -->
-    <div class="relative z-20 flex flex-col h-full">
-      <!-- Barre de navigation -->
-      <nav class="flex justify-between items-center px-8 py-6 bg-black bg-opacity-40 fixed top-0 left-0 right-0 z-30">
-        <!-- Logo -->
-        <h1 class="text-4xl text-primary font-fraktur tracking-wide">NOCTE GRAFIKA</h1>
-  
-        <!-- Boutons -->
-        <div class="flex gap-4 text-2xl">
-          <button class="text-primary hover:text-white transition duration-300">Websites</button>
-          <button class="text-primary hover:text-white transition duration-300">Logos</button>
-          <button class="bg-primary text-white px-4 py-2 rounded hover:bg-white hover:text-black transition duration-300">
-            Contact
-          </button>
-        </div>
-      </nav>
-  
-      <!-- Slide de l’image (placeholder pour futur carousel) -->
-      <div class="flex-1 flex items-center justify-center text-center">
-        <!--<h2 class="text-8xl text-primary uppercase tracking-wide">QUEST</h2> -->
-      </div>
-    </div>
-  </header>
+<!-- 🌑 NAVBAR FIXE -->
+<nav class="fixed top-0 left-0 right-0 z-30 flex justify-between items-center px-8 py-6 bg-black bg-opacity-70 font-fraktur">
+  <!-- Logo -->
+  <img src="/assets/images/logo/logo_nocte_red.png" alt="Nocte Grafika Logo" class="w-16 h-16">
+
+  <!-- Menu desktop -->
+  <div class="hidden md:flex gap-4 text-2xl">
+    <button class="text-primary hover:text-white transition duration-300">Websites</button>
+    <button class="text-primary hover:text-white transition duration-300">Logos</button>
+    <button class="bg-primary text-white px-4 py-2 rounded hover:bg-white hover:text-black transition duration-300">
+      Contact
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="md:hidden">
+    <button (click)="toggleMenu()" class="focus:outline-none">
+      <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path *ngIf="!menuOpen" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        <path *ngIf="menuOpen" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- 🌑 MENU BURGER DÉROULANT -->
+<div *ngIf="menuOpen" class="md:hidden fixed top-[80px] left-0 right-0 bg-black bg-opacity-90 px-8 py-6 flex flex-col gap-4 text-2xl z-20">
+  <button class="text-primary hover:text-white transition duration-300">Websites</button>
+  <button class="text-primary hover:text-white transition duration-300">Logos</button>
+  <button class="bg-primary text-white px-4 py-2 rounded hover:bg-white hover:text-black transition duration-300">
+    Contact
+  </button>
+</div>
+
+<!-- 🌑 HEADER EN DESSOUS DE LA NAV -->
+<header class="relative w-full h-screen font-fraktur">
+  <!-- Image de fond -->
+  <div class="absolute inset-0 z-0">
+    <img src="/assets/images/creepy_r.webp" alt="Banner Nocte Grafika" class="w-full h-full object-cover" />
+  </div>
+
+  <!-- Overlay noir -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+  <!-- Contenu centré -->
+  <div class="relative z-20 flex flex-col items-center md:items-start justify-center h-full text-center md:text-left px-6 md:px-20">
+  <h2 class="text-7xl md:text-8xl text-primary uppercase tracking-wide mt-20">Nocte <br/> Grafika</h2>
+  <p class="text-xl md:text-2xl text-white mt-4">L'art du macabre digital</p>
+</div>
+</header>
