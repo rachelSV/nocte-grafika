@@ -1,3 +1,99 @@
 body {
-    background-color: #F3F2EE;
+    background-color: #1D1D1D;
+    color: #ffffff;
+}
+
+.glassmorphism {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.733);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.322);
+}
+
+/* Cercles rouges qui tournent sur eux même */
+.circle {
+  position: absolute;
+}
+
+#circle01 { animation: rotation 150s infinite linear; width: 80%; transform: rotate(10deg); }
+#circle02 { animation: rotation 100s infinite linear; width: 66%; opacity: 0.9; }
+#circle03 { animation: rotation 70s infinite linear; width: 54%; opacity: 0.8; }
+#circle04 { animation: rotation 50s infinite linear; width: 44%; opacity: 0.7; }
+#circle05 { animation: rotation 40s infinite linear; width: 36%; opacity: 0.6; }
+#circle06 { animation: rotation 30s infinite linear; width: 29%; opacity: 0.5; }
+#circle07 { animation: rotation 10s infinite linear; width: 23.5%; opacity: 0.4; }
+#circle08 { animation: rotation 5s infinite linear; width: 18.7%; opacity: 0.3; }
+#circle09 { animation: rotation 2s infinite linear; width: 15%; opacity: 0.2; }
+#circle10 { animation: rotation 1s infinite linear; width: 12%; opacity: 0.1; }
+#circle11 { animation: rotation 1s infinite linear; width: 9%; opacity: 0.05; }
+
+/* .circleContainer {
+    position: fixed;
+    top: 60%;
+    left: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    pointer-events: none;
+} */
+
+.circleContainer {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+/* Par défaut (mobile-first) */
+.circleContainer {
+  height: 300px;
+  width: 800px;
+  top: 40%;
+  transform: translate(-40%, 0);
+}
+
+/* Tablette */
+@media (min-width: 640px) {
+  .circleContainer {
+    height: 400px;
+    width: 900px;
+    top: 35%;
+    transform: translate(-40%, 0);
+  }
+}
+
+/* Ordinateur portable */
+@media (min-width: 768px) {
+  .circleContainer {
+    height: 600px;
+    width: 1500px;
+    top: 30%;
+    transform: translate(-40%, 0);
+  }
+}
+
+/* Grands écrans */
+/* @media (min-width: 1024px) {
+  .circleContainer {
+    height: 600px;
+    width: 900px;
+    top: 35%;
+    transform: translate(-40%, 0);
+  }
+} */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
